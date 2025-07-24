@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="after.body.start">
+            <block class="AvantLink\Tracking\Block\Checkout\Success"
+                   name="AvantLink.checkout.block"
+                   template="AvantLink_Tracking::avantlink_data.phtml"
+                   after="-" >
+                <arguments>
+                    <argument name="view_model" xsi:type="object">AvantLink\Tracking\ViewModel\SuccessBlockHelper</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

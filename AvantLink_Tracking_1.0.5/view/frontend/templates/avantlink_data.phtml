@@ -1,0 +1,57 @@
+<?php
+    /**
+     * @var \AvantLink\Tracking\Block\Checkout $block
+     */
+
+    // @codingStandardsIgnoreFile
+
+    $order = $block->getLastOrder();
+    $orderId = '';
+    if($order != null && $order->getIncrementId() != null):
+        $orderId = $order->getIncrementId();
+    endif;
+    $subTotal = $order->getSubTotal() + $order->getBaseDiscountAmount();
+    $couponCode = $order->getCouponCode();
+    $currencyCode = $order->getOrderCurrencyCode();
+    $customerId = $order->getCustomerId();
+    $tax = $order->getTaxAmount();
+
+    $address = $block->getBillingAddress();
+    $countryCode = '';
+    $stateCode = '';
+
+if ($address != null && $address != ''):
+        $countryCode = $address->getCountryId();
+        $stateCode = $address->getRegionCode();
+    endif;
+
+    $items = $block->buildItemsArray();
+
+    $viewModel = $block->getViewModel();
+    $merchantId = $viewModel->getSettingValue();
+    $addlOrderSession = $viewModel->getSessionData();
+?>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "AvantLink_Tracking/js/avantlink_data": {
+                "orderData": {
+                    "orderId":"<?= $block->escapeHtml($orderId) ?>",
+                    "subTotal":"<?= $block->escapeHtml($subTotal) ?>",
+                    "couponCode":"<?= $block->escapeHtml($couponCode) ?>",
+                    "currencyCode":"<?= $block->escapeHtml($currencyCode) ?>",
+                    "customerId":"<?= $block->escapeHtml($customerId) ?>",
+                    "taxAmount": "<?= $block->escapeHtml($tax) ?>",
+                    "countryCode":"<?= $block->escapeHtml($countryCode) ?>",
+                    "stateCode":"<?= $block->escapeHtml($stateCode) ?>",
+                    "items": <?= json_encode($items); ?>
+                },
+                "merchantId": "<?= $block->escapeHtml($merchantId) ?>",
+                "order_id": <?= json_encode($addlOrderSession) ?>
+            }
+        }
+    }
+</script>
+
+

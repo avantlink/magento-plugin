@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Checkout\Block\Checkout\Success"
+                type="AvantLink\Tracking\Block\Checkout\Success" />
+
+    <type name="AvantLink\Tracking\Model\Session">
+        <arguments>
+            <argument name="storage" xsi:type="object">AvantLink\Tracking\Model\Session\Storage</argument>
+        </arguments>
+    </type>
+</config>

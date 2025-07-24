@@ -1,0 +1,26 @@
+{
+  "name": "avantlink/tracking",
+  "description": "A simple module that sets up the AvantLink tracking pixel for click data and order tracking.",
+  "type": "magento2-module",
+  "version": "1.0.5",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "require": {
+    "php": ">=7.4.0",
+    "magento/framework": ">=100.0.4"
+  },
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "AvantLink\\Tracking\\": ""
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url" : "https://github.com/avantlink/magento-plugin"
+    }
+  ]
+}

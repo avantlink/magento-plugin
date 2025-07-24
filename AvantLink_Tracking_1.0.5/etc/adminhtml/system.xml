@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Config/etc/system_file.xsd">
+    <system>
+        <tab id="avantlink" translate="label" sortOrder="10">
+            <label>AvantLink</label>
+        </tab>
+
+        <section id="avantlink_tracking" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>AvantLink_Tracking</label>
+            <tab>avantlink</tab>
+            <resource>AvantLink_Tracking::avantlink_tracking</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General</label>
+                <field id="merchant_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Merchant ID</label>
+                    <comment>Input your AvantLink Merchant ID. If you're not sure what your Merchant ID is, contact integration@avantlink.com</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -25,11 +25,11 @@ if ($address != null && $address != ''):
         $stateCode = $address->getRegionCode();
     endif;
 
-    $items = $block->buildItemsArray();
+    $items = json_encode($block->buildItemsArray());
 
     $viewModel = $block->getViewModel();
     $merchantId = $viewModel->getSettingValue();
-    $addlOrderSession = $viewModel->getSessionData();
+    $addlOrderSession = json_encode($viewModel->getSessionData());
 ?>
 
 <script type="text/x-magento-init">
@@ -45,10 +45,10 @@ if ($address != null && $address != ''):
                     "taxAmount": "<?= $block->escapeHtml($tax) ?>",
                     "countryCode":"<?= $block->escapeHtml($countryCode) ?>",
                     "stateCode":"<?= $block->escapeHtml($stateCode) ?>",
-                    "items": <?= json_encode($items); ?>
+                    "items": <?= $block->escapeHtml($items); ?>
                 },
                 "merchantId": "<?= $block->escapeHtml($merchantId) ?>",
-                "order_id": <?= json_encode($addlOrderSession) ?>
+                "order_id": <?= $block->escaepeHtml($addlOrderSession) ?>
             }
         }
     }

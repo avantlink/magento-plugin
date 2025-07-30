@@ -45,10 +45,10 @@ if ($address != null && $address != ''):
                     "taxAmount": "<?= $block->escapeHtml($tax) ?>",
                     "countryCode":"<?= $block->escapeHtml($countryCode) ?>",
                     "stateCode":"<?= $block->escapeHtml($stateCode) ?>",
-                    "items": "<?= $block->escapeHtml($items); ?>"
+                    "items": "<?= /* @noEscape */ $items; ?>"
                 },
                 "merchantId": "<?= $block->escapeHtml($merchantId) ?>",
-                "order_id": "<?= $block->escaepeHtml($addlOrderSession) ?>"
+                "order_id": "<?= /* @noEscape */ $addlOrderSession ?>"
             }
         }
     }

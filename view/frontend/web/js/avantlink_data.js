@@ -38,7 +38,7 @@ define([
         var avm = document.createElement('script');
         avm.type = 'text/javascript';
         avm.async = true;
-        avm.src = 'https://avmws.default.avantlink.net/10' + config.merchantId + '/';
+        avm.src = 'https://avmws-default.avantlink.net/10' + config.merchantId + '/';
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(avm, s);
     }

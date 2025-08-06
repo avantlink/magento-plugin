@@ -7,6 +7,7 @@
             <value id="magento" type="host">https://magento.com</value>
             <value id="avmws-secure-base" type="host">https://cdn.avmws.com/</value>
             <value id="avmws-base" type="host">http://cdn.avmws.com/</value>
+            <value id="avmws-dev" type="host">https://avmws-default.avantlink.net/</value>
 
         </values>
     </policy>
@@ -15,6 +16,7 @@
             <value id="devdocs" type="host">https://developer.adobe.com</value>
             <value id="avmws-secure" type="host">https://cdn.avmws.com/</value>
             <value id="avmws" type="host">http://cdn.avmws.com/</value>
+            <value id="avmws-dev2" type="host">https://avmws-default.avantlink.net/</value>
         </values>
     </policy>
     </policies>
